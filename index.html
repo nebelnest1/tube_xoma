@@ -242,16 +242,31 @@
     .xh-header-left { display:flex; align-items:center; min-width:0; gap:8px; flex:1; }
     .xh-logo-box { display:inline-flex; align-items:center; flex-shrink:0; line-height:0; }
     .xh-logo-box img { height:28px; width:auto; display:block; }
-    .xh-logo-light { display:block; }
-    .xh-logo-dark { display:none; }
-    html[data-theme="dark"] .xh-logo-light { display:none; }
-    html[data-theme="dark"] .xh-logo-dark { display:block; }
+    .xh-logo-box .xh-logo-light {  display: block !important;}
+    .xh-logo-box .xh-logo-dark {  display: none !important;}
+    html[data-theme="dark"] .xh-logo-box .xh-logo-light {  display: none !important;}
+    html[data-theme="dark"] .xh-logo-box .xh-logo-dark {  display: block !important;}   
     .xh-region-sex { display:flex; align-items:flex-start; gap:8px; min-width:0; margin-top:-2px; }
     .xh-region { font-size:12px; line-height:1; color:var(--text-muted); margin-top:2px; user-select:none; }
     .xh-sex-icons { display:inline-flex; align-items:flex-end; gap:2px; line-height:0; position:relative; top:1px; }
     .xh-sex-icons svg { display:block; flex-shrink:0; }
-    .xh-sex-icons .i-female { color:#E34449; width:17px; height:17px; }
-    .xh-sex-icons .i-straight { color:#2D87D4; width:17px; height:17px; margin-left:-2px; }
+    .xh-sex-icons .i-female {
+  color: #E34449;
+  width: 17px;
+  height: 17px;
+}
+
+.xh-sex-icons .i-straight {
+  color: #2D87D4;
+  width: 17px;
+  height: 17px;
+  margin-left: -2px;
+}
+
+.xh-sex-icons .i-female path,
+.xh-sex-icons .i-straight path {
+  fill: currentColor;
+}
     .xh-region-arrow { width:13px; height:13px; color:var(--icon-main); margin-top:3px; flex-shrink:0; }
     .xh-header-right { display:flex; align-items:center; gap:16px; flex-shrink:0; }
     .xh-header-icon { width:24px; height:24px; color:var(--icon-main); display:inline-flex; align-items:center; justify-content:center; position:relative; cursor:pointer; }
@@ -781,4 +796,5 @@
   <script defer src="./assets/scripts/common.js?v=3"></script>
 </body>
 </html>
+
 
