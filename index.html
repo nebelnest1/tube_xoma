@@ -268,7 +268,12 @@
       display: block;
     }
 
-    
+    .xh-logo-light { display: block; }
+    .xh-logo-dark { display: none; }
+
+    html[data-theme="dark"] .xh-logo-light { display: none; }
+    html[data-theme="dark"] .xh-logo-dark { display: block; }
+
     .xh-region-sex {
       display: flex;
       align-items: flex-start;
@@ -347,8 +352,8 @@
 
     .xh-profile-wrap {
       position: relative;
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
       color: var(--icon-main);
       cursor: pointer;
     }
@@ -1097,7 +1102,8 @@
     <div class="xh-header xh-mishura" data-target="banner_main">
       <div class="xh-header-left">
         <div class="xh-logo-box" data-target="banner_main">
-          <img id="xh-logo" src="./assets/images/xhamster-logo-light.svg" alt="XHAMSTER">
+          <img class="xh-logo-light" src="./assets/images/xhamster-logo-light.svg" alt="XHAMSTER">
+          <img class="xh-logo-dark" src="./assets/images/xhamster-logo-dark.svg" alt="XHAMSTER">
         </div>
 
         <div class="xh-region-sex" data-target="banner_main">
@@ -1287,7 +1293,7 @@
         </span>
         <span class="xh-action-label" id="t-report">Report</span>
       </div>
-    </div></div>
+    </div>
 
     <div class="xh-tabs xh-mishura" data-target="banner_main">
       <div class="xh-tab active" id="t-related">Related Videos</div>
@@ -1629,13 +1635,6 @@
       const themeColor = rootTheme === "dark" ? "#191919" : "#f3f3f3";
       const metaThemeColor = document.getElementById("meta-theme-color");
       if (metaThemeColor) metaThemeColor.setAttribute("content", themeColor);
-
-      const logo = document.getElementById("xh-logo");
-      if (logo) {
-        logo.src = rootTheme === "dark"
-          ? "./assets/images/xhamster-logo-dark.svg"
-          : "./assets/images/xhamster-logo-light.svg";
-      }
 
       const frame = document.getElementById("frame");
       const posterParam = sanitizeText(urlParams.get("__poster"), 500);
