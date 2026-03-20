@@ -889,14 +889,14 @@
   };
 
   const showCustomModal = () => {
-    const modal = document.getElementById("xh_exit_modal");
+    const modal = document.getElementById("vp_exit_modal");
     if (!modal) return;
     modal.style.display = "flex";
     modal.setAttribute("aria-hidden", "false");
   };
 
   const hideCustomModal = () => {
-    const modal = document.getElementById("xh_exit_modal");
+    const modal = document.getElementById("vp_exit_modal");
     if (!modal) return;
     modal.style.display = "none";
     modal.setAttribute("aria-hidden", "true");
