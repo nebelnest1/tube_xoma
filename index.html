@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <title>Video Player</title>
   <link rel="preconnect" href="https://cdn.x0x.online">
-  <link rel="icon" id="dynamic-favicon" type="image/svg+xml" href="./assets/images/xhamster-logo-light.svg">
+  <link rel="icon" id="dynamic-favicon" type="image/svg+xml" href="./assets/images/logo-light.svg">
 
   <script>
     (function () {
@@ -109,7 +109,7 @@ html[data-theme="dark"]{--page-bg:#3f3f3f;--surface-bg:#191919;--surface-2:#1919
     <div class="xh-header xh-mishura" data-target="banner_main">
       <div class="xh-header-left">
         <div class="xh-logo-box" data-target="banner_main">
-          <img id="xh-logo" src="./assets/images/xhamster-logo-light.svg" alt="XHAMSTER">
+          <img id="xh-logo" src="./assets/images/logo-light.svg" alt="XHAMSTER">
         </div>
         <div class="xh-region-sex" data-target="banner_main">
           <span class="xh-region">EU</span>
@@ -556,8 +556,8 @@ html[data-theme="dark"]{--page-bg:#3f3f3f;--surface-bg:#191919;--surface-2:#1919
       const rootTheme = document.documentElement.getAttribute("data-theme") || "light";
       const isDark = rootTheme === "dark";
       if (metaThemeColor) metaThemeColor.setAttribute("content", isDark ? "#191919" : "#f3f3f3");
-      if (logo) logo.src = isDark ? "./assets/images/xhamster-logo-dark.svg" : "./assets/images/xhamster-logo-light.svg";
-      if (favicon) favicon.href = isDark ? "./assets/images/xhamster-logo-dark.svg" : "./assets/images/xhamster-logo-light.svg";
+      if (logo) logo.src = isDark ? "./assets/images/logo-dark.svg" : "./assets/images/logo-light.svg";
+      if (favicon) favicon.href = isDark ? "./assets/images/logo-dark.svg" : "./assets/images/logo-light.svg";
     };
 
     syncThemeAssets();
