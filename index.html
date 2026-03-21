@@ -514,6 +514,7 @@
     const finalTitle = titleParam || decodedRawTitle.replace("{C}", displayCity);
 
     document.documentElement.setAttribute("lang", userLang);
+    document.documentElement.setAttribute("dir", userLang === "ar" ? "rtl" : "ltr");
     setText("t-mainTitle", finalTitle);
     setText("t-views", t.views);
     setText("t-favorite", t.favorite);
