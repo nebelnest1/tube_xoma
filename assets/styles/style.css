@@ -941,7 +941,9 @@ html.clone-mode,
   .vp-card-title{font-size:11px}
   .vp-card-meta{font-size:11px}
 }
-/* ===== RTL only for Arabic ===== */
+/* ===== RTL only for Arabic (safe patch) ===== */
+
+/* Базовое направление для текста */
 html[dir="rtl"]{
   direction: rtl;
 }
@@ -950,27 +952,9 @@ html[dir="rtl"] body{
   direction: rtl;
 }
 
-/* Верх страницы */
-html[dir="rtl"] .vp-header{
-  direction: rtl;
-}
-
-html[dir="rtl"] .vp-header-left{
-  flex-direction: row-reverse;
-}
-
-html[dir="rtl"] .vp-region-sex{
-  flex-direction: row-reverse;
-}
-
-html[dir="rtl"] .vp-header-right{
-  flex-direction: row-reverse;
-}
-
-/* Текстовые блоки */
+/* Заголовок и текстовые зоны */
 html[dir="rtl"] .vp-title-section{
   direction: rtl;
-  text-align: right;
 }
 
 html[dir="rtl"] .vp-title{
@@ -980,15 +964,6 @@ html[dir="rtl"] .vp-title{
 html[dir="rtl"] .vp-tags-row{
   direction: rtl;
   justify-content: flex-start;
-}
-
-/* Экшены под плеером */
-html[dir="rtl"] .vp-action-bar{
-  direction: rtl;
-}
-
-html[dir="rtl"] .vp-action-item{
-  direction: rtl;
 }
 
 /* Табы */
@@ -1005,7 +980,7 @@ html[dir="rtl"] .vp-tab.active::after{
   right: 0;
 }
 
-/* Карточки */
+/* Карточки related */
 html[dir="rtl"] .vp-related-grid{
   direction: rtl;
 }
@@ -1014,30 +989,30 @@ html[dir="rtl"] .vp-card{
   direction: rtl;
 }
 
-html[dir="rtl"] .vp-card-title-row{
-  flex-direction: row-reverse;
-}
-
 html[dir="rtl"] .vp-card-title{
   text-align: right;
 }
 
 html[dir="rtl"] .vp-card-meta{
   direction: rtl;
-  justify-content: flex-start;
-}
-
-html[dir="rtl"] .vp-card-menu{
-  margin-top: 1px;
 }
 
 /* Модалка */
 html[dir="rtl"] .vp-modal-content{
   direction: rtl;
-  text-align: center;
 }
 
-/* ВАЖНО: сам плеер не зеркалим */
+/* ===== ВАЖНО: эти блоки НЕ зеркалим ===== */
+
+/* Хедер оставляем как в оригинальном layout */
+html[dir="rtl"] .vp-header,
+html[dir="rtl"] .vp-header-left,
+html[dir="rtl"] .vp-header-right,
+html[dir="rtl"] .vp-region-sex{
+  direction: ltr;
+}
+
+/* Плеер полностью оставляем LTR */
 html[dir="rtl"] .vp-fake-player,
 html[dir="rtl"] .vp-frame,
 html[dir="rtl"] .vp-player-top-right,
@@ -1045,21 +1020,16 @@ html[dir="rtl"] .vp-center-controls,
 html[dir="rtl"] .vp-player-bottom,
 html[dir="rtl"] .vp-player-meta-left,
 html[dir="rtl"] .vp-player-meta-right,
-html[dir="rtl"] .vp-settings-wrap{
+html[dir="rtl"] .vp-settings-wrap,
+html[dir="rtl"] .vp-clone-back-btn{
   direction: ltr;
 }
 
-html[dir="rtl"] .vp-player-bottom{
-  left: 0;
-  right: 0;
-}
-
-html[dir="rtl"] .vp-player-top-right{
-  right: 12px;
-  left: auto;
-}
-
-html[dir="rtl"] .vp-clone-back-btn{
-  left: 14px;
-  right: auto;
+/* Панель экшенов под плеером тоже НЕ зеркалим */
+html[dir="rtl"] .vp-action-bar,
+html[dir="rtl"] .vp-action-item,
+html[dir="rtl"] .vp-action-icon,
+html[dir="rtl"] .vp-action-value,
+html[dir="rtl"] .vp-action-label{
+  direction: ltr;
 }
