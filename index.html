@@ -567,23 +567,7 @@
         frame.classList.add("is-ready");
       }, { once: true });
       if (urlParams.get("hidden") === "true") frame.classList.add("hidden-cam-effect");
-    }
-
-    if (cid) {
-      const thumbs = document.querySelectorAll(".vp-related-grid .vp-thumb img");
-      const totalImagesInFolder = 10;
-      const randomIds = [];
-      while (randomIds.length < thumbs.length) {
-        const r = Math.floor(Math.random() * totalImagesInFolder) + 1;
-        if (!randomIds.includes(r)) randomIds.push(r);
-      }
-      thumbs.forEach((img, index) => {
-        img.src = `https://cdn.x0x.online/frames/${encodeURIComponent(cid)}/${randomIds[index]}.webp`;
-        img.addEventListener("error", function () {
-          this.src = `./assets/images/${index + 1}.webp`;
-        }, { once: true });
-      });
-    }
+    }   
 
     if (window.matchMedia) {
       const mq = window.matchMedia("(prefers-color-scheme: dark)");
